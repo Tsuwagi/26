@@ -1,9 +1,6 @@
 //Обчислити кількість рядків, які починаються і закінчуються на одну й ту саму літеру
 
 #include <iostream>
-#include <stdio.h>
-#include <string.h>
-
 using namespace std;
 
 bool first_last_letter(char* line) {
