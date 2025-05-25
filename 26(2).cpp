@@ -17,19 +17,14 @@ void words(char* name)
 
   cout<<"\nСлова, які починаються та закінчуються на той самий символ:" <<endl;
 
-  while (fgets(s, 100, f))
-  {
-     s[strlen(s)-1]='\0';
-     t = strtok(s, " .,;?!-");
-     while (t != NULL)
-     {
-       if (t[0] == t[strlen(t)-1])
-         puts(t);
-       t = strtok(NULL, " .,;?!-");
-     }
-  }
-  fclose(f);
+  while (fgets(s, 100, f)) {
+  s[strcspn(s, "\n")] = '\0';
+  for (t = strtok(s, " .,;?!-");
+    t != NULL; t = strtok(NULL, " .,;?!-"))
+    if (t[0] == t[strlen(t)-1])
+      puts(t);
 }
+fclose(f);
 
 int main() {
 
