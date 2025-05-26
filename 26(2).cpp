@@ -16,7 +16,6 @@ void words(char* name)
     return; }
 
   while (fgets(s, 100, f)) {
-  s[strcspn(s, "\n")] = '\0';
   for (t = strtok(s, " .,;?!-");
     t != NULL; t = strtok(NULL, " .,;?!-"))
     if (t[0] == t[strlen(t)-1])
