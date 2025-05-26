@@ -15,8 +15,6 @@ void words(char* name)
     { cout<<"Cannot open file\n"; 
     return; }
 
-  cout<<"\nСлова, які починаються та закінчуються на той самий символ:" <<endl;
-
   while (fgets(s, 100, f)) {
   s[strcspn(s, "\n")] = '\0';
   for (t = strtok(s, " .,;?!-");
